@@ -27,14 +27,17 @@ const logout = () => {
 };
 </script>
 
+
+
+
 <template>
     <div>
         <Head :title="title" />
 
         <Banner />
 
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+        <div class="min-h-screen bg-custom-bg">
+            <nav class="bg-form-bg border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -124,7 +127,7 @@ const logout = () => {
                             </div>
 
                             <!-- Settings Dropdown -->
-                            <div class="ms-3 relative">
+                            <div class="ms-3 relative" >
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
                                         <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
@@ -144,7 +147,7 @@ const logout = () => {
 
                                     <template #content>
                                         <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                        <div class="block px-4 py-2 text-xs text-gray-400" >
                                             Manage Account
                                         </div>
 
@@ -169,11 +172,14 @@ const logout = () => {
                             </div>
                         </div>
 
+
+
+
                         <!-- Hamburger -->
                         <div class="-me-2 flex items-center sm:hidden">
-                            <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" @click="showingNavigationDropdown = ! showingNavigationDropdown">
+                            <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out" style="background-color: #311309;" @click="showingNavigationDropdown = ! showingNavigationDropdown">
                                 <svg
-                                    class="h-6 w-6"
+                                    class="h-6 w-6 text-white"
                                     stroke="currentColor"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -195,6 +201,7 @@ const logout = () => {
                                 </svg>
                             </button>
                         </div>
+
                     </div>
                 </div>
 
@@ -284,7 +291,7 @@ const logout = () => {
             </nav>
 
             <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-white shadow">   
+            <header v-if="$slots.header" class="bg-form-bg shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                     <p class="text-gray-900 text-lg font-bold">Bienvenido: <span class="text-blue-600 text-lg">{{ $page.props.auth.user.name }}</span></p>
@@ -298,3 +305,18 @@ const logout = () => {
         </div>
     </div>
 </template>
+
+
+<style>
+.bg-custom-bg {
+    background-color: #c28f4a;
+}
+
+.bg-form-bg {
+    background-color: #efcb66;
+}
+
+.input {
+    background-color: #e9ce86;
+}
+</style>
