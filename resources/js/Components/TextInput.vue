@@ -26,3 +26,5 @@ defineExpose({ focus: () => input.value.focus() });
         @input="$emit('update:modelValue', $event.target.value)"
     >
 </template>
+
+ style="background-color: #311309;"

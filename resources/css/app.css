@@ -5,3 +5,11 @@
 [x-cloak] {
     display: none;
 }
+
+.w-16 {
+    width: 64px; /* Ancho deseado */
+}
+
+.h-16 {
+    height: 64px; /* Altura deseada */
+}

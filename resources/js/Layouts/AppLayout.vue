@@ -45,7 +45,10 @@ const logout = () => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationMark class="block h-9 w-auto" />
+                                    <img
+                                        class="w-16 h-16"
+                                        src="../../../logo/NoteVerse.jpg"
+                                    />
                                 </Link>
                             </div>
 
@@ -294,7 +297,7 @@ const logout = () => {
             <header v-if="$slots.header" class="bg-form-bg shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
-                    <p class="text-gray-900 text-lg font-bold">Bienvenido: <span class="text-blue-600 text-lg">{{ $page.props.auth.user.name }}</span></p>
+                    <p class="text-gray-900 text-lg font-bold">Bienvenido: <span class="text-black text-lg">{{ $page.props.auth.user.name }}</span></p>
                 </div>
             </header>
 

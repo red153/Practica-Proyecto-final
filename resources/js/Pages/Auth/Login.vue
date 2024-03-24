@@ -1,7 +1,6 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import AuthenticationCard from '@/Components/AuthenticationCard.vue';
-import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
@@ -35,7 +34,10 @@ const submit = () => {
     <div class="bg-custom-bg h-screen flex justify-center items-center">
         <AuthenticationCard class="bg-form-bg">
             <template #logo>
-                <AuthenticationCardLogo />
+                <img
+                    class="w-16 h-16"
+                    src="../../../../logo/NoteVerse.jpg"
+                />
             </template>
 
             <form @submit.prevent="submit" class="bg-form-bg p-8 rounded-lg">
