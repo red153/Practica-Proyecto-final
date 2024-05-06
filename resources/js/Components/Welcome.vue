@@ -1,7 +1,3 @@
-<script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-</script>
-
 <template>
     <div>
         <div class="p-6 lg:p-8 border-b border-gray-200" style="background-color: #311309">
@@ -18,7 +14,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8" style="background-color: #311309">
             <div class="bg-form-bg rounded-lg p-6">
                 <div class="flex items-center">
-                    <h2 class="text-2xl font-semibold">Create note</h2>
+                    <h2 class="text-2xl font-semibold">Crear nota</h2>
                 </div>
 
                 <p class="mt-4 text-sm leading-relaxed">
@@ -27,9 +23,9 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
             </div>
 
             <div class="bg-form-bg rounded-lg p-6">
-                <h2 class="text-2xl font-semibold">Shownotes</h2>
+                <h2 class="text-2xl font-semibold">Mostrar Notas</h2>
                 <p class="mt-4 text-sm leading-relaxed">
-                    Si ya tienes notas ve a shownotes y gestiónalas como quieras
+                    Si ya tienes notas ve a "Mostrar notas" y gestiónalas como quieras
                 </p>
             </div>
             <div class="bg-form-bg rounded-lg p-6">

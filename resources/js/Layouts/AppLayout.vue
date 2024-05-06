@@ -55,17 +55,17 @@ const logout = () => {
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    Inicio
                                 </NavLink>
                             </div>
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('notes.index')" :active="route().current('notes.index')">
-                                    showNotes
+                                    Mostrar notas
                                 </NavLink>
                             </div>
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('notes.create')" :active="route().current('notes.create')">
-                                    Create Note
+                                    Crear nota
                                 </NavLink>
                             </div>
                         </div>

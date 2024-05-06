@@ -18,13 +18,12 @@ const submit = () => {
     form.post(route('password.email'));
 };
 </script>
-
 <template>
     <Head title="Forgot Password" />
 
-    <AuthenticationCard>
+    <AuthenticationCard class="bg-custom-bg">
         <template #logo>
-            TODO
+            <h1 class="text-3xl font-bold mb-4">Forgot our Password</h1>
         </template>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -36,13 +35,13 @@ const submit = () => {
         </div>
 
         <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
+            <div class="bg-from-bg p-4 rounded-lg shadow">
+                <InputLabel for="email" value="Email" class="font-semibold text-lg" />
                 <TextInput
                     id="email"
                     v-model="form.email"
                     type="email"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full input"
                     required
                     autofocus
                     autocomplete="username"
@@ -51,10 +50,24 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing" class="px-4 py-2 text-white border rounded-md font-semibold text-xs" style="background-color: #311309">
                     Email Password Reset Link
                 </PrimaryButton>
             </div>
         </form>
     </AuthenticationCard>
 </template>
+
+<style>
+.bg-custom-bg {
+    background-color: #c28f4a;
+}
+
+.bg-form-bg {
+    background-color: #efcb66;
+}
+
+.input {
+  background-color: #e9ce86;
+}
+</style>
