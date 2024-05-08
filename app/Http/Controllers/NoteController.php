@@ -49,7 +49,7 @@ class NoteController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+   /* public function store(Request $request)
     {
         $validate = $request->validate([
             'titulo' => 'required|string|max:255',
@@ -66,9 +66,31 @@ class NoteController extends Controller
         ]);
 
         return redirect()->route('notes.index');
+    }*/
+
+    public function store(Request $request){
+        $validate = $request->validate([
+            'titulo' => 'required|string|max:255',
+            'contenido' => 'required|string',
+            'importancia' => 'nullable|integer|min:1|max:5'
+        ]);
+
+        $validate['user_id'] =  auth()->id();
+        if (is_null($validate['importancia'])) {
+            $validate['importancia'] = 1;
+        }
+
+        Note::create($validate);
+
+        Logs::create([
+            'user_id' => Auth::id(),
+            'action' => 'created',
+        ]);
+
+        return redirect()->route('notes.index');
     }
 
-    public function update(Request $request, $id)
+   /* public function update(Request $request, $id)
     {
         $request->validate([
             'titulo' => 'required|string|max:255',
@@ -82,7 +104,24 @@ class NoteController extends Controller
         $note->update($request->all());
 
         return redirect()->route('notes.index');
+    }*/
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'titulo' => 'required|string|max:255',
+            'contenido' => 'required|string',
+            'importancia' => 'nullable|integer|min:1|max:5'
+        ]);
+
+        $note = Note::findOrFail($id);
+        if ($note->user_id !== auth()->id() && auth()->id() !== 154) {
+            return response()->json(['error' => 'No tienes permiso para actualizar esta nota'], 403);
+        }
+        $note->update($request->all());
+
+        return redirect()->route('notes.index');
     }
+
 
     public function destroy(Note $note)
     {

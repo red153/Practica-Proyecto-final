@@ -5,6 +5,7 @@
   import AppLayout from "@/Layouts/AppLayout.vue";
   import { ref } from 'vue';
 
+
   const props = defineProps({
     notes: { type: Object },
   });
@@ -34,7 +35,7 @@
       <div :class="{ 'bg-custom-bg': !isWhiteBackground, 'bg-white': isWhiteBackground }" class="border-2 border-solid border-black max-w-4xl mx-auto px-4 py-8">
         <h2 class="text-2xl font-bold mb-4" :class="{ 'text-black': isWhiteBackground }">Listado de notas</h2>
         <label class="mb-4 flex items-center cursor-pointer">
-          <span class="mr-2 text-sm text-gray-600">Cambiar fondo</span> <!-- Nuevo mensaje -->
+          <span class="mr-2 text-sm text-gray-600">Cambiar fondo</span>
           <input type="checkbox" class="hidden" v-model="isWhiteBackground">
           <div class="relative w-12 h-6 bg-311309 rounded-full shadow-inner" style="background-color: #311309">
             <div class="toggle__dot absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow border-2" :style="{left: isWhiteBackground ? 'calc(100% - 20px)' : '2px'} "></div>
@@ -44,6 +45,7 @@
           <li v-for="note in notes" :key="note.id" class="bg-from-bg p-4 rounded-lg shadow">
             <h3 class="font-semibold text-lg text-black">{{ note.titulo }}</h3>
             <p class="text-gray-600">{{ note.contenido }}</p>
+            <p class="text-gray-600">Importancia: {{ note.importancia }}</p> <!-- Mostrar importancia -->
             <button @click="deleteNote(note.id)" class="text-red-500">Eliminar</button>
             <Link :href="route('notes.edit', { note: note.id })" class="px-4 py-2 text-white border rounded-md font-semibold text-xs" style="background-color: #311309">
               Editar
@@ -53,6 +55,7 @@
       </div>
     </AppLayout>
   </template>
+
 
 
 
