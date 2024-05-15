@@ -5,7 +5,6 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\models\Note;
-use App\Http\Controllers\LogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,5 +41,6 @@ Route::resource('notes', NoteController::class)->middleware('auth');
 
 Route::get('/notes/update/{note}', [NoteController::class, 'edit'])->name('notes.edit');
 Route::put('/notes/{note}', [NoteController::class, 'update'])->name('notes.update');
-
+Route::get('/notas/sorted', [NoteController::class, 'indexOrdenado'])->name('notes.indexOrdenado');
+Route::get('/notas/public', [NoteController::class, 'publicNotes'])->name('notes.publicNotes');
 //Route::get('/logs', [LogController::class, 'index']);

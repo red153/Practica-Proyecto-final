@@ -10,28 +10,58 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Bienvenido a NoteVerse" />
 
-    <div class="flex justify-center items-center min-h-screen bg-custom-bg">
-        <div v-if="canLogin" class="p-6 text-center flex flex-col items-center">
-            <div class="mb-4">
-                <img class="w-38 h-32" src="../../../logo/NoteVerse.jpg"/>
+    <div class="min-h-screen flex flex-col justify-between bg-custom-bg">
+        <!-- Header Section -->
+        <header class="w-full py-6 bg-from-bg flex justify-between items-center px-10 shadow-md">
+            <div class="flex items-center">
+                <img class="w-16 h-16 mr-4" src="../../../logo/NoteVerse.jpg" alt="NoteVerse Logo"/>
+                <h1 class="text-3xl font-bold text-black">NoteVerse</h1>
             </div>
             <div>
-                <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Dashboard</Link>
+                <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="bg-custom-bg text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Dashboard</Link>
 
                 <template v-else>
-                    <Link :href="route('login')" class="bg-yellow-300 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Log in</Link>
+                    <Link :href="route('login')" class="bg-custom-bg text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Iniciar Sesión</Link>
 
-                    <Link v-if="canRegister" :href="route('register')" class="bg-yellow-300 text-black font-semibold px-6 py-3 rounded-lg mt-4 ml-4 hover:bg-yellow-400 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Register</Link>
+                    <Link v-if="canRegister" :href="route('register')" class="bg-custom-bg text-white font-semibold px-6 py-3 rounded-lg ml-4 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Registrarse</Link>
                 </template>
             </div>
-        </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex justify-center items-center flex-grow">
+            <div class="text-center p-6 max-w-3xl">
+                <h2 class="text-5xl font-bold mb-4 text-black">Bienvenido a NoteVerse</h2>
+                <p class="text-lg text-black mb-6">Tu destino para las mejores soluciones en gestión de notas. Organiza, administra y accede a tus notas desde cualquier lugar, en cualquier momento.</p>
+                <div>
+                    <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="bg-custom-bg text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Ir al Dashboard</Link>
+                    <template v-else>
+                        <Link :href="route('login')" class="bg-custom-bg text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Iniciar Sesión</Link>
+                        <Link v-if="canRegister" :href="route('register')" class="bg-custom-bg text-white font-semibold px-6 py-3 rounded-lg mt-4 ml-4 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-100">Registrarse</Link>
+                    </template>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="w-full py-4 bg-from-bg text-center">
+            <p class="text-black">&copy; 2024 NoteVerse. Todos los derechos reservados.</p>
+        </footer>
     </div>
 </template>
 
 <style>
 .bg-custom-bg {
     background-color: #c28f4a;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-from-bg {
+    background-color: #efcb66;
 }
 </style>
