@@ -40,7 +40,7 @@ const submit = () => {
         <form @submit.prevent="submit" class="flex flex-col space-y-4">
           <div class="bg-form-bg p-8 rounded-lg">
             <div>
-              <InputLabel for="name" value="Name" />
+              <InputLabel for="name" value="Nombre" />
               <TextInput
                 id="name"
                 v-model="form.name"
@@ -67,7 +67,7 @@ const submit = () => {
             </div>
 
             <div>
-              <InputLabel for="password" value="Password" />
+              <InputLabel for="password" value="Contraseña" />
               <TextInput
                 id="password"
                 v-model="form.password"
@@ -80,7 +80,7 @@ const submit = () => {
             </div>
 
             <div>
-              <InputLabel for="password_confirmation" value="Confirm Password" />
+              <InputLabel for="password_confirmation" value="Confirmar constraseña" />
               <TextInput
                 id="password_confirmation"
                 v-model="form.password_confirmation"
@@ -98,9 +98,9 @@ const submit = () => {
                   <Checkbox id="terms" v-model:checked="form.terms" name="terms" required />
 
                   <div class="ms-2">
-                    I agree to the
+                    De acuerdo con
                     <a target="_blank" :href="route('terms.show')" class="link">Terms of Service</a>
-                    and
+                    y
                     <a target="_blank" :href="route('policy.show')" class="link">Privacy Policy</a>
                   </div>
                 </div>
@@ -110,10 +110,10 @@ const submit = () => {
           </div>
 
           <div class="flex justify-between">
-            <Link :href="route('login')" class="link">Already registered?</Link>
+            <Link :href="route('login')" class="link">Ya estas registrado?</Link>
 
             <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing" style="background-color: #311309">
-              Register
+              Registrarse
             </PrimaryButton>
           </div>
         </form>

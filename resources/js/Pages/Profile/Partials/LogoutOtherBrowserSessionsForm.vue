@@ -88,7 +88,7 @@ const closeModal = () => {
             </div>
 
             <div class="flex items-center mt-5">
-                <PrimaryButton @click="confirmLogout">
+                <PrimaryButton @click="confirmLogout" class="bg-custom">
                     Log Out Other Browser Sessions
                 </PrimaryButton>
 
@@ -127,7 +127,7 @@ const closeModal = () => {
                     </SecondaryButton>
 
                     <PrimaryButton
-                        class="ms-3"
+                        class="ms-3 bg-custom"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
                         @click="logoutOtherBrowserSessions"
@@ -139,3 +139,12 @@ const closeModal = () => {
         </template>
     </ActionSection>
 </template>
+
+<style>
+.bg-custom {
+  background-color: #311309;
+}
+.bg-custom-bg {
+      background-color: #c28f4a;
+  }
+</style>

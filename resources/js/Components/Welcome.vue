@@ -34,6 +34,24 @@
                     Disfruta de un entorno cómodo para poder tener anotadas todas tus tareas
                 </p>
             </div>
+            <div class="bg-form-bg rounded-lg p-6">
+                <h2 class="text-2xl font-semibold ">Filtrado por importancia</h2>
+                <p class="mt- text-sm leading-relaxed">
+                    Revisa cual es la prioridad de tus tareas en las notas con los botones de filtrado
+                </p>
+            </div>
+            <div class="bg-form-bg rounded-lg p-6">
+                <h2 class="text-2xl font-semibold ">Revisa las notas publicas</h2>
+                <p class="mt- text-sm leading-relaxed">
+                    La gente puede dejar en las notas publicas opiniones de forma anonima o dejar tareas para que otros usuarios lo tengan en cuenta
+                </p>
+            </div>
+            <div class="bg-form-bg rounded-lg p-6">
+                <h2 class="text-2xl font-semibold ">Modifica las notas</h2>
+                <p class="mt- text-sm leading-relaxed">
+                    Puedes modificar tus notas clicando en editar
+                </p>
+            </div>
         </div>
     </div>
 </template>

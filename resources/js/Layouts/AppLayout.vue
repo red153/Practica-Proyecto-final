@@ -243,6 +243,22 @@ const logout = () => {
                                 Profile
                             </ResponsiveNavLink>
 
+                            <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                Inicio
+                            </ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('notes.index')" :active="route().current('notes.index')">
+                                Mostrar notas
+                            </ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('notes.create')" :active="route().current('notes.create')">
+                                Crear nota
+                            </ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('notes.publicNotes')" :active="route().current('notes.publicNotes')">
+                                Ver Notas Públicas
+                            </ResponsiveNavLink>
+
+
+
+
                             <ResponsiveNavLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')" :active="route().current('api-tokens.index')">
                                 API Tokens
                             </ResponsiveNavLink>

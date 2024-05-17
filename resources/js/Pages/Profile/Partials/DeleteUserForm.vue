@@ -53,7 +53,7 @@ const closeModal = () => {
             </div>
 
             <div class="mt-5">
-                <DangerButton @click="confirmUserDeletion">
+                <DangerButton @click="confirmUserDeletion" class="bg-custom">
                     Delete Account
                 </DangerButton>
             </div>
@@ -72,7 +72,7 @@ const closeModal = () => {
                             ref="passwordInput"
                             v-model="form.password"
                             type="password"
-                            class="mt-1 block w-3/4"
+                            class="mt-1 block w-3/4 bg-custom-bg"
                             placeholder="Password"
                             autocomplete="current-password"
                             @keyup.enter="deleteUser"
@@ -88,10 +88,11 @@ const closeModal = () => {
                     </SecondaryButton>
 
                     <DangerButton
-                        class="ms-3"
+                        class="ms-3 bg-custom"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
                         @click="deleteUser"
+
                     >
                         Delete Account
                     </DangerButton>
@@ -100,3 +101,12 @@ const closeModal = () => {
         </template>
     </ActionSection>
 </template>
+
+<style>
+.bg-custom {
+  background-color: #311309;
+}
+.bg-custom-bg {
+      background-color: #c28f4a;
+  }
+</style>

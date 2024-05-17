@@ -70,10 +70,27 @@ const alignmentClasses = computed(() => {
                 style="display: none;"
                 @click="open = false"
             >
-                <div class="rounded-md ring-1 ring-black ring-opacity-5" :class="contentClasses">
+                <div class="rounded-md ring-1 ring-black ring-opacity-5 bg-custom-bg" :class="contentClasses">
                     <slot name="content" />
                 </div>
             </div>
         </transition>
     </div>
 </template>
+
+<style>
+.bg-custom-bg {
+    background-color: #c28f4a;
+}
+
+.bg-form-bg {
+    background-color: #efcb66;
+}
+
+.input {
+    background-color: #e9ce86;
+}
+.bg-custom {
+  background-color: #311309;
+}
+</style>

@@ -29,11 +29,6 @@ const isWhiteBackground = ref(false);
         <div>
             <br>
         </div>
-        <div class="bg-form-bg rounded-lg p-6">
-                <p class="mt- text-sm leading-relaxed">
-                    El filtrado muestra del más importante (5) al menos importante (1)
-                </p>
-        </div>
         <div>
             <br>
         </div>
